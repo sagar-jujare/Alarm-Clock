@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Sirin+Stencil&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url(images/background.jpg);
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.alarm {
+    background: rgba(0, 0, 0, 0.5);
+    width: 900px;
+    height: 550px;
+    margin-left: 60px;
+    border-radius: 20px;
+    display: flex;
+}
+
+/* Column 1 */
+.col-1 {
+    flex-basis: 35%;
+    background-color: rgb(255, 238, 3);
+    margin: 8px;
+    border-radius: 15px;
+}
+
+.col-1 img {
+    height: 80px;
+    width: 80px;
+}
+
+.col-1 .inner img {
+    height: 450px;
+    width: 400px;
+    margin-top: -20%;
+}
+
+.col-1 a {
+    padding: 12px;
+    align-items: center;
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.col-1 a i {
+    padding: 10px;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+.col-1 a i:hover {
+    transform: translateY(-15px);
+    transform: rotate(360deg);
+    font-size: 40px;
+}
+
+.glow {
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 5px 10px rgb(0, 0, 0), 0 0 20px #000000, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #000000, 0 0 70px #e60073;
+    }
+
+    to {
+        text-shadow: 0 0 20px rgb(0, 0, 0), 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #000000, 0 0 80px #ff4da6;
+    }
+}
+
+/* Column 2 */
+.col-2 {
+    flex-basis: 55%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+.datetime {
+    color: #fff;
+    font-family: 'Sirin Stencil', cursive;
+    width: 340px;
+    padding: 15px 10px;
+    transition: 0.5s;
+}
+
+.date {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+
+/* Time Section */
+.time_1 {
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 130px;
+    font-family: 'Sirin Stencil', cursive;
+}
+
+.time_1 span:not(:last-child) {
+    position: relative;
+    max-width: 0 6px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.time_1 span:last-child {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 10px;
+    padding: 0 5px;
+    border-radius: 3px;
+}
+
+
+/* Option Section */
+.setAlarm {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+.column select {
+    background: rgba(255, 255, 255, 0.5);
+    color: black;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 4px;
+    border: 1px solid rgb(255, 238, 3);
+    border-radius: 18px;
+}
+
+#btn-setAlarm {
+    background: none;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    padding: 8px;
+    width: 80%;
+    font-size: 25px;
+    color: white;
+    border: solid 2px rgb(255, 238, 3);
+    border-radius: 15px;
+}
+
+.btn-delete,
+#stopAlarm {
+    padding: 5px;
+    color: white;
+    background: none;
+    border: 1px solid rgb(255, 238, 3);
+    border-radius: 18px;
+}
+
+#stopAlarm {
+    visibility: hidden;
+    width: 100px;
+    margin: 10px 50%;
+}
+
+.btn-delete {
+    margin-left: 50px;
+}
+
+#btn-setAlarm:hover,
+#stopAlarm:hover {
+    cursor: pointer;
+    background: rgb(255, 238, 3);
+    box-shadow: 0 0 30px rebeccapurple;
+    color: black;
+    font-size: 600;
+}
+
+.btn-delete:hover {
+    cursor: pointer;
+    background: red;
+    box-shadow: 0 0 30px rebeccapurple;
+    color: white;
+    font-size: 600;
+}
+
+h3 {
+    color: #fff;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+
+/* Alarm Push list */
+.alarmList {
+    color: #fff;
+    margin: 14px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.alarmLog {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px auto;
+}
